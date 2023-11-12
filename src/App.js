@@ -4,7 +4,7 @@ import Sleep from './components/Sleep/Sleep.tsx'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Sleep/>
     </div>
   );

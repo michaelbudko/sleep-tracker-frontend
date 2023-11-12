@@ -44,20 +44,21 @@ const Sleep = () => {
   }, []); 
 
   return (
-    <div className="sleep-container text-center mt-5">
-      <div className="d-flex justify-content-center align-content-center mb-3">
-        <form>
-          <label>
-            Desired Rise Time:
-            <input
-              type="text"
-              value={riseTime + 'am'}
-            />
-          </label>
-        </form>
-        <div className="date-range m-2 d-flex">
-          <h3>Sleep {dateFrom} : {dateTo}</h3>
-          <h3>, {numDays} Days</h3>
+    <div className="sleep-container text-center">
+      <div className="text-center d-flex align-items-center justify-content-center mb-3">
+        <div className='d-inline-block'>
+          <form>
+            <label>
+              Desired Rise Time:
+              <input
+                type="text"
+                value={riseTime + 'am'}
+              />
+            </label>
+          </form>
+        </div>
+        <div className="d-inline-block date-range m-2">
+          <h3 style={{whiteSpace:'nowrap'}}>{numDays} Days: from {dateFrom} to {dateTo}</h3>
         </div>
       </div>
 
