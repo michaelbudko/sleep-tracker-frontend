@@ -108,9 +108,9 @@ const Sleep = () => {
                     <th>Average Sleep Time:</th>
                 </div>
             </td>
-            <td>{avgSleepTime[0].toFixed(2)}</td>
-            <td>{avgSleepTime[1].toFixed(2)}</td>
-            <td>{avgSleepTime[2].toFixed(2)}</td>
+            <td>{avgSleepTime[0]?.toFixed(2)}</td>
+            <td>{avgSleepTime[1]?.toFixed(2)}</td>
+            <td>{avgSleepTime[2]?.toFixed(2)}</td>
           </tr>
           <tr>
             <td>
@@ -118,9 +118,9 @@ const Sleep = () => {
                     <th>Average Time in Bed:</th>
                 </div>
             </td>
-            <td>{avgTimeInBed[0].toFixed(2)}</td>
-            <td>{avgTimeInBed[1].toFixed(2)}</td>
-            <td>{avgTimeInBed[2].toFixed(2)}</td>
+            <td>{avgTimeInBed[0]?.toFixed(2)}</td>
+            <td>{avgTimeInBed[1]?.toFixed(2)}</td>
+            <td>{avgTimeInBed[2]?.toFixed(2)}</td>
           </tr>
           <tr>
             <td>
@@ -128,9 +128,9 @@ const Sleep = () => {
                     <th>Average Sleep Efficiency:</th>
                 </div>
             </td>
-            <td>{(avgSleepEfficiency[0] * 100).toFixed(2)}%</td>
-            <td>{(avgSleepEfficiency[1] * 100).toFixed(2)}%</td>
-            <td>{(avgSleepEfficiency[2] * 100).toFixed(2)}%</td>
+            <td>{(avgSleepEfficiency[0] * 100)?.toFixed(2)}%</td>
+            <td>{(avgSleepEfficiency[1] * 100)?.toFixed(2)}%</td>
+            <td>{(avgSleepEfficiency[2] * 100)?.toFixed(2)}%</td>
           </tr>
           <tr>
             <td>
@@ -138,9 +138,9 @@ const Sleep = () => {
                     <th>Average Sleep Quality:</th>
                 </div>
             </td>
-            <td>{avgSleepQuality[0].toFixed(2)}</td>
-            <td>{avgSleepQuality[1].toFixed(2)}</td>
-            <td>{avgSleepQuality[2].toFixed(2)}</td>
+            <td>{avgSleepQuality[0]?.toFixed(2)}</td>
+            <td>{avgSleepQuality[1]?.toFixed(2)}</td>
+            <td>{avgSleepQuality[2]?.toFixed(2)}</td>
           </tr>
           <tr>
             <td>
