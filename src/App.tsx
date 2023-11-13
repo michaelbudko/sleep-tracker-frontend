@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Sleep from './components/Sleep/Sleep.tsx'
+import {Sleep} from './components';
 
 function App() {
   return (
