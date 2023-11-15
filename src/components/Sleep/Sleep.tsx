@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+
 
 const Sleep = () => {
   const [numDays, setNumDays] = useState(7);
@@ -16,6 +18,9 @@ const Sleep = () => {
   const [avgSleepEfficiency, setAvgSleepEfficiency] = useState([0,0,0]);
   const [avgSleepQuality, setAvgSleepQuality] = useState([0,0,0]);
   const [numDaysWithinRiseTime, setNumDaysWithinRiseTime] = useState([0,0,0]);
+
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +52,7 @@ const Sleep = () => {
   return (
     <div>
       <div className='d-flex justify-content-center align-items-center'>
-        <Button>Add Sleep Log</Button>
+        <Button className='mt-4' onClick={() => {navigate('add-log')}}>Add Sleep Log</Button>
       </div>
       <div className="sleep-container text-center">
         <div className="text-center d-flex align-items-center justify-content-center mb-3">

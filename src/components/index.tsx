@@ -1,2 +1,3 @@
 import Sleep from "./Sleep/Sleep";
-export {Sleep};
+import AddLog from "./AddLog/AddLog";
+export {Sleep, AddLog};

@@ -1,12 +1,16 @@
 import React from 'react';
 import './App.css';
-import {Sleep} from './components';
+import { Sleep, AddLog } from './components';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Sleep/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Sleep/>}/>
+        <Route path='/add-log' element={<AddLog/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
