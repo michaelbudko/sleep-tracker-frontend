@@ -1,0 +1,44 @@
+.header {
+    display: flex; /* Display children in a row */
+    background-color: navy;
+    padding: 10px;
+    width: 100%;
+    transition: background-color 0.3s;
+    justify-content: space-between;
+    align-items: center;
+}
+.left-section {
+    display: flex;
+    align-items: center;
+}
+  
+.right-section {
+    display: flex;
+}
+
+.hover-text {
+    position: relative; /* Create a positioning context */
+}
+  
+.hover-text a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+  
+.hover-text:hover {
+    background-color: rgb(17,180,52);
+}
+    
+    /* Style for the text inside the header */
+.header a {
+      color: white;
+      text-decoration: none;
+      margin-right: 10px; /* Add right margin between links */
+}
+    
+    /* Add spacing between header links */
+.header a:last-child {
+      margin-right: 0; /* Remove right margin from the last link */
+}
+    
