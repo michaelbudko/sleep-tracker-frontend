@@ -3,6 +3,8 @@ import { ErrorMessage, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Button, FormGroup, FormControl, FormLabel, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import formSchema from '../../schemas';
+import './AddLog.css';
 
 const AddLog = () => {
 
@@ -23,7 +25,7 @@ const AddLog = () => {
       sleepMeds: '',
       notes: ''
     },
-    // validationSchema: validationSchema,
+    validationSchema: formSchema,
     onSubmit: (values) => {
       // Your form submission logic here
       console.log(values);
@@ -44,6 +46,7 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="Monday"
+            className={formik.errors.night && formik.touched.night ? 'input-error' : ''}
             />
             {/* <ErrorMessage name="night" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>
@@ -59,6 +62,7 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="01/01/2023"
+            className={formik.errors.date && formik.touched.date ? 'input-error' : ''}
             />
             {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>
@@ -74,8 +78,10 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="12:01am"
+            className={formik.errors.timeWentToBed && formik.touched.timeWentToBed ? 'input-error' : ''}
+
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {/* <ErrorMessage name="timeWentToBed" render={( msg) => (<Alert variant="danger">{msg}</Alert>)} /> */}
         </FormGroup>
 
         {/* Time took to fall asleep */}
@@ -89,6 +95,8 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="0:25"
+            className={formik.errors.timeTookToFallAsleep && formik.touched.timeTookToFallAsleep ? 'input-error' : ''}
+
             />
             {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>
@@ -104,6 +112,7 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="1"
+            className={formik.errors.numTimesWokeUp && formik.touched.numTimesWokeUp ? 'input-error' : ''}
             />
             {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>
@@ -119,6 +128,7 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="8:00am"
+            className={formik.errors.finalAwakening && formik.touched.finalAwakening ? 'input-error' : ''}
             />
             {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>
@@ -134,6 +144,7 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="8:00am"
+            className={formik.errors.gotOutOfBed && formik.touched.gotOutOfBed ? 'input-error' : ''}
             />
             {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>
@@ -149,6 +160,7 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="8:00"
+            className={formik.errors.hoursSlept && formik.touched.hoursSlept ? 'input-error' : ''}
             />
             {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>
@@ -164,6 +176,7 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="8:00"
+            className={formik.errors.hoursAllotted && formik.touched.hoursAllotted ? 'input-error' : ''}
             />
             {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>
@@ -179,6 +192,7 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="3"
+            className={formik.errors.sleepQuality && formik.touched.sleepQuality ? 'input-error' : ''}
             />
             {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>
@@ -194,6 +208,7 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="Melatonin: 1mg"
+            className={formik.errors.sleepMeds && formik.touched.sleepMeds ? 'input-error' : ''}
             />
             {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>
@@ -209,6 +224,7 @@ const AddLog = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             placeholder="notes"
+            className={formik.errors.notes && formik.touched.notes ? 'input-error' : ''}
             />
             {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
         </FormGroup>

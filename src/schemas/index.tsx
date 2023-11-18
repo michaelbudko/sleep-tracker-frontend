@@ -44,3 +44,6 @@ const formSchema = yup.object().shape({
 
     notes: yup.string().required('Notes is required'),
 })
+
+export default formSchema;
+
