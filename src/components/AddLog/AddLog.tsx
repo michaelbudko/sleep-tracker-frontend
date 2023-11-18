@@ -48,7 +48,7 @@ const AddLog = () => {
             placeholder="Monday"
             className={formik.errors.night && formik.touched.night ? 'input-error' : ''}
             />
-            {/* <ErrorMessage name="night" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.night && formik.touched.night && <p className='error'>{formik.errors.night}</p>}
         </FormGroup>
 
         {/* Date */}
@@ -64,7 +64,7 @@ const AddLog = () => {
             placeholder="01/01/2023"
             className={formik.errors.date && formik.touched.date ? 'input-error' : ''}
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.date && formik.touched.date && <p className='error'>{formik.errors.date}</p>}
         </FormGroup>
 
         {/* Time went to bed */}
@@ -79,9 +79,8 @@ const AddLog = () => {
             onChange={formik.handleChange}
             placeholder="12:01am"
             className={formik.errors.timeWentToBed && formik.touched.timeWentToBed ? 'input-error' : ''}
-
             />
-            {/* <ErrorMessage name="timeWentToBed" render={( msg) => (<Alert variant="danger">{msg}</Alert>)} /> */}
+            {formik.errors.timeWentToBed && formik.touched.timeWentToBed && <p className='error'>{formik.errors.timeWentToBed}</p>}
         </FormGroup>
 
         {/* Time took to fall asleep */}
@@ -96,9 +95,8 @@ const AddLog = () => {
             onChange={formik.handleChange}
             placeholder="0:25"
             className={formik.errors.timeTookToFallAsleep && formik.touched.timeTookToFallAsleep ? 'input-error' : ''}
-
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.timeTookToFallAsleep && formik.touched.timeTookToFallAsleep && <p className='error'>{formik.errors.timeTookToFallAsleep}</p>}
         </FormGroup>
 
         {/* Number of times woke up */}
@@ -114,7 +112,7 @@ const AddLog = () => {
             placeholder="1"
             className={formik.errors.numTimesWokeUp && formik.touched.numTimesWokeUp ? 'input-error' : ''}
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.numTimesWokeUp && formik.touched.numTimesWokeUp && <p className='error'>{formik.errors.numTimesWokeUp}</p>}
         </FormGroup>
 
         {/* Time of final awakening */}
@@ -130,7 +128,7 @@ const AddLog = () => {
             placeholder="8:00am"
             className={formik.errors.finalAwakening && formik.touched.finalAwakening ? 'input-error' : ''}
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.finalAwakening && formik.touched.finalAwakening && <p className='error'>{formik.errors.finalAwakening}</p>}
         </FormGroup>
 
         {/* Time got out of bed */}
@@ -146,7 +144,7 @@ const AddLog = () => {
             placeholder="8:00am"
             className={formik.errors.gotOutOfBed && formik.touched.gotOutOfBed ? 'input-error' : ''}
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.gotOutOfBed && formik.touched.gotOutOfBed && <p className='error'>{formik.errors.gotOutOfBed}</p>}
         </FormGroup>
 
         {/* How many hours did you sleep */}
@@ -162,7 +160,7 @@ const AddLog = () => {
             placeholder="8:00"
             className={formik.errors.hoursSlept && formik.touched.hoursSlept ? 'input-error' : ''}
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.hoursSlept && formik.touched.hoursSlept && <p className='error'>{formik.errors.hoursSlept}</p>}
         </FormGroup>
 
         {/* How many hours did you sleep */}
@@ -178,7 +176,7 @@ const AddLog = () => {
             placeholder="8:00"
             className={formik.errors.hoursAllotted && formik.touched.hoursAllotted ? 'input-error' : ''}
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.hoursAllotted && formik.touched.hoursAllotted && <p className='error'>{formik.errors.hoursAllotted}</p>}
         </FormGroup>
         
         {/* How many hours did you sleep */}
@@ -194,7 +192,7 @@ const AddLog = () => {
             placeholder="3"
             className={formik.errors.sleepQuality && formik.touched.sleepQuality ? 'input-error' : ''}
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.sleepQuality && formik.touched.sleepQuality && <p className='error'>{formik.errors.sleepQuality}</p>}
         </FormGroup>
 
         {/* How many hours did you sleep */}
@@ -210,7 +208,7 @@ const AddLog = () => {
             placeholder="Melatonin: 1mg"
             className={formik.errors.sleepMeds && formik.touched.sleepMeds ? 'input-error' : ''}
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.sleepMeds && formik.touched.sleepMeds && <p className='error'>{formik.errors.sleepMeds}</p>}
         </FormGroup>
 
         {/* How many hours did you sleep */}
@@ -226,7 +224,7 @@ const AddLog = () => {
             placeholder="notes"
             className={formik.errors.notes && formik.touched.notes ? 'input-error' : ''}
             />
-            {/* <ErrorMessage name="date" render={(msg) => <Alert variant="danger">{msg}</Alert>} /> */}
+            {formik.errors.notes && formik.touched.notes && <p className='error'>{formik.errors.notes}</p>}
         </FormGroup>
 
         
