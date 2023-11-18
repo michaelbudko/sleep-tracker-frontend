@@ -32,13 +32,13 @@
     
     /* Style for the text inside the header */
 .header a {
-      color: white;
-      text-decoration: none;
-      margin-right: 10px; /* Add right margin between links */
+    color: white;
+    text-decoration: none;
+    margin-right: 10px; /* Add right margin between links */
 }
     
     /* Add spacing between header links */
 .header a:last-child {
-      margin-right: 0; /* Remove right margin from the last link */
+    margin-right: 0; /* Remove right margin from the last link */
 }
     

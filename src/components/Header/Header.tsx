@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Header.css';
+import sleepTrackerLogo from '../../assets/logos/SleepTracker.png';
 
 const Header = () => {
     return (
       <div className='header d-flex'>
         <div className='left-section'>
-          <Link to='/home'>
-            <img src='../../assets/logos/SleepTracker.png' alt='SleepTracker Logo' className='logo' width='50' height='50' />
+          <Link to='/'>
+            <img src={sleepTrackerLogo} alt='SleepTracker Logo' className='logo' width='100' height='100' />
           </Link>
         </div>
         <div className='right-section'>

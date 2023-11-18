@@ -6,14 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 const AddLog = () => {
 
-  const validationSchema = Yup.object().shape({
-    night: Yup.string()
-      .matches(/^(monday|tuesday|wednesday|thursday|friday|saturday|sunday)$/i, 'Invalid Day of the Week')
-      .required('Night is required'),
-    date: Yup.string()
-      .required('Date is required'),
-  });
-
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -31,7 +23,7 @@ const AddLog = () => {
       sleepMeds: '',
       notes: ''
     },
-    validationSchema: validationSchema,
+    // validationSchema: validationSchema,
     onSubmit: (values) => {
       // Your form submission logic here
       console.log(values);
@@ -40,7 +32,7 @@ const AddLog = () => {
   });
 
   return (
-    <form className='mt-3' autoComplete='false' onSubmit={formik.handleSubmit}>
+    <form className='mt-3 ms-5' autoComplete='false' onSubmit={formik.handleSubmit}>
         {/* Night */}
         <FormGroup className='mt-3' controlId="night">
             <label className='d-block mb-2'>Night (day of the week)</label>
@@ -148,7 +140,7 @@ const AddLog = () => {
 
         {/* How many hours did you sleep */}
         <FormGroup className='mt-3' controlId='hoursSlept'>
-            <label className='d-block mb-2'>What time did you get out of bed?</label>
+            <label className='d-block mb-2'>How many hours did you sleep last night?</label>
             <input
             type="text"
             id='hoursSlept'
