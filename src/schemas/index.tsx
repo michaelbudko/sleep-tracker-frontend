@@ -12,6 +12,10 @@ const formSchema = yup.object().shape({
     timeWentToBed: yup.string()
         .required('Time Went To Bed is required')
         .matches(/^(0?[1-9]|1[0-2]):[0-5][0-9]([APMapm]{2})$/, 'Invalid time format. Use hh:mmam or hh:mmpm'),
+
+    timeTookToFallAsleep: yup.string()
+        .required('Time Took to Fall Asleep is required')
+        .matches(/^(0?[1-9]|1[0-2]):[0-5][0-9]$/, 'Invalid time format. Use hh:mm or h:mm'),
     
     numTimesWokeUp: yup.number()
         .integer('Must be a whole number')
@@ -26,7 +30,7 @@ const formSchema = yup.object().shape({
         .required('Got Out of Bed is required')
         .matches(/^(0?[1-9]|1[0-2]):[0-5][0-9]([APMapm]{2})$/, 'Invalid time format. Use hh:mmam or hh:mmpm'),
 
-    hoursSlep: yup.string()
+    hoursSlept: yup.string()
         .required('Hours Slept is required')
         .matches(/^(0?[1-9]|1[0-2]):[0-5][0-9]$/, 'Invalid time format. Use hh:mm or h:mm'),
 

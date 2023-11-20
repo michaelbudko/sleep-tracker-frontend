@@ -101,7 +101,7 @@ const AddLog = () => {
 
         {/* Number of times woke up */}
         <FormGroup className='mt-3' controlId='numTimesWokeUp'>
-            <label className='d-block mb-2'>About how long did it take you to fall asleep?</label>
+            <label className='d-block mb-2'>About how many times did you awaken during the night?</label>
             <input
             type="number"
             id='numTimesWokeUp'
