@@ -3,6 +3,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import Auth from '../Auth/Auth';
 
 
 const Sleep = () => {
@@ -40,7 +41,6 @@ const Sleep = () => {
         setNumInsomniaSleep(data.num_insomnia_nights);
         setNumDaysWithinRiseTime(data.num_woke_up_desired_time_nights);
         setRiseTime(data.desired_rise_time);
-        // Update other state variables similarly
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -166,6 +166,7 @@ const Sleep = () => {
           </tbody>
         </table>
       </div>
+      <Auth/>
     </div>
   );
 };

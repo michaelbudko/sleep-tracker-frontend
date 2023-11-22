@@ -5,6 +5,7 @@ import { Button, FormGroup, FormControl, FormLabel, Alert } from 'react-bootstra
 import { useNavigate } from 'react-router-dom';
 import formSchema from '../../schemas';
 import './AddLog.css';
+import axios from 'axios';
 
 const AddLog = () => {
 
@@ -26,9 +27,18 @@ const AddLog = () => {
       notes: ''
     },
     validationSchema: formSchema,
-    onSubmit: (values) => {
-      // Your form submission logic here
+    onSubmit: async (values) => {
+
       console.log(values);
+
+      const endpointURL = 'https://add-sleep-log-4ydnoxgsaa-uc.a.run.app';
+
+      try {  
+        const response = await axios.post(endpointURL, values);
+        console.log(response.data.message);
+      } catch (error) {
+        console.error('Error submitting sleep log:', error);
+      }
       navigate('/');
     },
   });

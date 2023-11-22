@@ -1,4 +1,5 @@
 import Sleep from "./Sleep/Sleep";
 import AddLog from "./AddLog/AddLog";
 import Header from "./Header/Header";
-export { Sleep, AddLog, Header };
+import Auth from './Auth/Auth';
+export { Sleep, AddLog, Header, Auth};

@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+nav h3 {
+  margin: 1rem;
+  cursor: pointer;
+  color: #718096;
+}
+nav h3:hover {
+  color: white;
+}
+.auth-container-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: #1a202c;
+    border-radius: 25px;
+}
+.auth-container-outer {
+    background: red;
+}

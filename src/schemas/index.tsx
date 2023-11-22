@@ -5,9 +5,12 @@ const formSchema = yup.object().shape({
         .required('Night is required')
         .matches(/^(monday|tuesday|wednesday|thursday|friday|saturday|sunday)$/i, 'Invalid Day of the Week'),
 
-    date: yup.string()
+    date: yup.date()
         .required('Date is required')
-        .matches(/^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/, 'Invalid date format. Use mm/dd/yyyy'),
+        .transform((originalValue) => {
+            const parsedDate = new Date(originalValue);
+            return isNaN(parsedDate.getTime()) ? undefined : parsedDate;
+        }),
     
     timeWentToBed: yup.string()
         .required('Time Went To Bed is required')
@@ -15,7 +18,7 @@ const formSchema = yup.object().shape({
 
     timeTookToFallAsleep: yup.string()
         .required('Time Took to Fall Asleep is required')
-        .matches(/^(0?[1-9]|1[0-2]):[0-5][0-9]$/, 'Invalid time format. Use hh:mm or h:mm'),
+        .matches(/^(0?[0-9]|1[0-2]):[0-5][0-9]$/, 'Invalid time format. Use hh:mm or h:mm'),
     
     numTimesWokeUp: yup.number()
         .integer('Must be a whole number')
@@ -32,11 +35,11 @@ const formSchema = yup.object().shape({
 
     hoursSlept: yup.string()
         .required('Hours Slept is required')
-        .matches(/^(0?[1-9]|1[0-2]):[0-5][0-9]$/, 'Invalid time format. Use hh:mm or h:mm'),
+        .matches(/^(0?[0-9]|1[0-2]):[0-5][0-9]$/, 'Invalid time format. Use hh:mm or h:mm'),
 
     hoursAllotted: yup.string()
         .required('Hours Allotted is required')
-        .matches(/^(0?[1-9]|1[0-2]):[0-5][0-9]$/, 'Invalid time format. Use hh:mm or h:mm'),
+        .matches(/^(0?[0-9]|1[0-2]):[0-5][0-9]$/, 'Invalid time format. Use hh:mm or h:mm'),
 
     sleepQuality: yup.number()
         .integer('Must be a whole number')
