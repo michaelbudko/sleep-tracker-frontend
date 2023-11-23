@@ -17,7 +17,9 @@ const Auth = () => {
 
               <label htmlFor="password">Password</label>
               <input id="password" type="text" placeholder="Enter your password" onChange={(e) => {setPassword(e.target.value)}}/>
+              <Button onClick={login} style={{marginTop: "15px"}}>Login</Button>
             </form>
+            
           );
     };
 
@@ -29,6 +31,7 @@ const Auth = () => {
 
               <label htmlFor="password">Password</label>
               <input id="password" type="text" placeholder="Enter your password" onChange={(e) => {setPassword(e.target.value)}}/>
+              <Button onClick={signup} style={{marginTop: "15px"}}>Sign Up</Button>
             </form>
           );
     };
@@ -64,7 +67,6 @@ const Auth = () => {
                     </h3>
                 </nav>
                 {view === "signup" ? signupForm() : loginForm()}
-                <Button onClick={signup}>Submit</Button>
             </div>
         </div>
     );
