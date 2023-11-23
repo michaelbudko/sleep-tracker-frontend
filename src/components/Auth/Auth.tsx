@@ -3,6 +3,33 @@ import './Auth.css'
 
 const Auth = () => {
     const [view, setView] = useState("login");
+
+    const loginForm = () => {
+        return (
+            <form autoComplete="off">
+              <label htmlFor="email">Email</label>
+              <input id="email" type="email" placeholder="Enter your email" />
+
+              <label htmlFor="password">Password</label>
+              <input id="password" type="text" placeholder="Enter your password" />
+            </form>
+          );
+    };
+
+    const signupForm = () => {
+        return (
+            <form autoComplete="off">
+              <label htmlFor="username">Username</label>
+              <input id="username" type="text" placeholder="Enter your username" />
+
+              <label htmlFor="email">Email</label>
+              <input id="email" type="email" placeholder="Enter your email" />
+
+              <label htmlFor="password">Password</label>
+              <input id="password" type="text" placeholder="Enter your password" />
+            </form>
+          );
+    };
     return (
         <div className="auth-container-outer">
             <div className="auth-container-inner">
@@ -20,7 +47,7 @@ const Auth = () => {
                     Signup
                     </h3>
                 </nav>
-                {view === "signup" ? <div></div> : <div></div>}
+                {view === "signup" ? signupForm() : loginForm()}
             </div>
         </div>
     );
