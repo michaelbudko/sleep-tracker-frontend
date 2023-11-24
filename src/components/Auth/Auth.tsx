@@ -9,6 +9,7 @@ const Auth = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const loginForm = () => {
         return (
@@ -60,6 +61,7 @@ const Auth = () => {
             );
             console.log(user);
         } catch (error: any) {
+            setErrorMessage("Incorrect email and/or password")
             console.log(error.message);
         }
     };
@@ -81,6 +83,7 @@ const Auth = () => {
                     Signup
                     </h3>
                 </nav>
+                {<p className='error'>{errorMessage}</p>}
                 {view === "signup" ? signupForm() : loginForm()}
             </div>
         </div>

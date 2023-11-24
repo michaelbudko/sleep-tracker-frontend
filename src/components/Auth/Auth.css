@@ -44,6 +44,7 @@ form label {
 input,
 select {
     width: 100%;
+    max-width: 500px;
     padding: 0.65rem 0.5rem;
     font-size: 1rem;
     color: white;

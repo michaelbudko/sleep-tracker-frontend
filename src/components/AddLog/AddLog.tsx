@@ -5,6 +5,7 @@ import { Button, FormGroup, FormControl, FormLabel, Alert } from 'react-bootstra
 import { useNavigate } from 'react-router-dom';
 import formSchema from '../../schemas';
 import './AddLog.css';
+import { auth } from '../../firebase-config';
 import axios from 'axios';
 
 const AddLog = () => {
@@ -237,9 +238,6 @@ const AddLog = () => {
             {formik.errors.notes && formik.touched.notes && <p className='error'>{formik.errors.notes}</p>}
         </FormGroup>
 
-        
-
-        {/* Submit button */}
         <Button className='mt-3 mb-3' type='submit'>
             Submit
         </Button>
