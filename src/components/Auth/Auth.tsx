@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../../firebase-config';
 import './Auth.css'
 import { Button } from "react-bootstrap";
@@ -8,6 +8,7 @@ const Auth = () => {
     const [view, setView] = useState("login");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
 
     const loginForm = () => {
         return (
@@ -26,6 +27,9 @@ const Auth = () => {
     const signupForm = () => {
         return (
             <form autoComplete="off">
+              <label htmlFor="username">Username</label>
+              <input id="username" type="text" placeholder="Enter your username" onChange={(e) => {setUsername(e.target.value)}}/>
+
               <label htmlFor="email">Email</label>
               <input id="email" type="email" placeholder="Enter your email" onChange={(e) => {setEmail(e.target.value)}}/>
 
@@ -38,15 +42,26 @@ const Auth = () => {
 
     const signup = async () => {
         try {
-            const user = await createUserWithEmailAndPassword(auth, email, password);
-            console.log(user);
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            await updateProfile(user, { displayName: username });
+            console.log('User created successfully:', user);
         } catch (error: any) {
             console.log(error.message);
         }
     };
 
     const login = async () => {
-
+        try {
+            const user = await signInWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+            console.log(user);
+        } catch (error: any) {
+            console.log(error.message);
+        }
     };
 
     return (

@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase-config';
 import './Header.css';
 import sleepTrackerLogo from '../../assets/logos/SleepTracker.png';
 
 const Header = () => {
+
+    const signout = async () => {
+      await signOut(auth);
+    }
+
     return (
       <div className='header d-flex'>
         <div className='left-section'>
@@ -19,7 +26,7 @@ const Header = () => {
             <Link to='/donate'>Donate &#10084;</Link>
           </span> */}
           <span className='hover-text'>
-            <Link to='/login'>Sign out</Link>
+            <Link to='/' onClick={signout}>Sign out</Link>
           </span>
         </div>
       </div>
