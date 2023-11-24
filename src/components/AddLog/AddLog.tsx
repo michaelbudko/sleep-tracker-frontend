@@ -5,15 +5,19 @@ import { Button, FormGroup, FormControl, FormLabel, Alert } from 'react-bootstra
 import { useNavigate } from 'react-router-dom';
 import formSchema from '../../schemas';
 import './AddLog.css';
-import { auth } from '../../firebase-config';
+import { getAuth} from 'firebase/auth';
 import axios from 'axios';
 
 const AddLog = () => {
 
   const navigate = useNavigate();
 
+  const auth = getAuth();
+  const user = auth.currentUser;
+
   const formik = useFormik({
     initialValues: {
+      userId: user ? user.uid : 'NULL',
       night: '',
       date: '',
       timeWentToBed: '',
